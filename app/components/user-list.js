@@ -4,6 +4,7 @@ export default Ember.Component.extend({
   newUser: 'newUser',
   deleteUser: 'deleteUser',
   unloadAllUsers: 'unloadAllUsers',
+  sort: 'sort',
 
   actions: {
     saveNewItem: function() {
@@ -16,20 +17,12 @@ export default Ember.Component.extend({
       this.sendAction('deleteUser', user);
     },
 
-    sort: function(param) {
-      var sortedList = ['empty'];
-
-      if (param === 'asc') {
-        sortedList = this.get('list').sort();
-      } else if (param === 'desc') {
-        sortedList = this.get('list').reverse();
-      }
-
-      this.set('list', sortedList.toArray());
-    },
-
     removeUsers: function() {
       this.sendAction('unloadAllUsers');
+    },
+
+    sort: function(param) {
+      this.sendAction('sort', param);
     }
   }
 

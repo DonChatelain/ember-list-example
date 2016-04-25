@@ -3,13 +3,12 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   actions: {
     deleteUser: function(user) {
-      var user = this.store.peekRecord('user', user.get('id'));
-      this.store.unloadRecord(user);
+      this.store.peekRecord('user', user.get('id')).unloadRecord();
     },
 
     newUser: function(component) {
       this.store.createRecord('user', {
-                                id: this.store.peekAll('user').get('length') + 1,
+                                id: Math.floor((Math.random() * 100) + 1),
                                 firstName: component.get('firstName'),
                                 lastName: component.get('lastName'),
                               });
@@ -18,7 +17,17 @@ export default Ember.Controller.extend({
     },
 
     unloadAllUsers: function() {
-      this.store.unloadAll('user')
+      this.store.unloadAll('user');
+    },
+
+    sort: function(param) {
+      var sortedList = this.get('model').sortBy('firstName');
+
+      if (param === 'desc') {
+        sortedList = sortedList.reverse();
+      }
+
+      this.set('model', sortedList.toArray());
     }
   }
 });
