@@ -1,17 +1,19 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  // sorting: ['list'],
+  newUser: 'newUser',
+  deleteUser: 'deleteUser',
+  unloadAllUsers: 'unloadAllUsers',
+
   actions: {
     saveNewItem: function() {
-      var list = this.get('list');
-      list.push(this.get('newUser'));
-      this.set('list', list.toArray());
-      this.set('newUser', '');
+      this.sendAction('newUser', this);
+      this.set('firstName', '');
+      this.set('lastName', '');
     },
 
-    removeUsers: function() {
-      this.set('list', []);
+    removeUser: function(user) {
+      this.sendAction('deleteUser', user);
     },
 
     sort: function(param) {
@@ -24,6 +26,10 @@ export default Ember.Component.extend({
       }
 
       this.set('list', sortedList.toArray());
+    },
+
+    removeUsers: function() {
+      this.sendAction('unloadAllUsers');
     }
   }
 

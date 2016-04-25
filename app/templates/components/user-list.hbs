@@ -7,9 +7,13 @@ SORT:
   <li><a {{action 'removeUsers'}}>Remove</a></li>
 </ul>
 
-{{input value=newUser }} <a {{action 'saveNewItem'}}>Save</a>
-{{#each list as |item| }}
-  <p>{{item}}</p>
-{{/each}}
+<p>{{input value=firstName placeholder='First Name'}}
+{{input value=lastName placeholder='Last Name'}}
+<button {{action 'saveNewItem'}}>Save</button></p>
 
-{{yield}}
+
+<div>
+  {{#each list as |item| }}
+    <p>{{item.firstName}} {{item.lastName}} <a {{action 'removeUser' item}}>Remove</a></p>
+  {{/each}}
+</div>
