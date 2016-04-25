@@ -1,0 +1,13 @@
+{{title}}
+
+SORT:
+<ul>
+  <li><a {{action 'sort' 'asc'}}> Alphabetically ASC</a></li>
+  <li><a {{action 'sort' 'desc'}}> Alphabetically DESC</a></li>
+  <li><a {{action 'removeUsers'}}>Remove</a></li>
+</ul>
+{{#each list as |item| }}
+  <p>{{item}}</p>
+{{/each}}
+
+{{yield}}
