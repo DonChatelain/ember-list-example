@@ -10,8 +10,6 @@ export default Ember.Component.extend({
   reloadModel: 'reloadModel',
   setSearch: 'setSearch',
 
-  modelName: 'user',
-
   searchResult: function() {
     this.sendAction('setSearch', this.get('search'));
   }.observes('search'),
@@ -29,7 +27,6 @@ export default Ember.Component.extend({
 
     removeAll: function(modelName) {
       this.sendAction('unloadAll', modelName);
-      this.set('list', []);
     },
 
     sort: function(param) {
