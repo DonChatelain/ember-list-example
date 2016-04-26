@@ -25,8 +25,9 @@ export default Ember.Component.extend({
       this.sendAction('deleteUser', user);
     },
 
-    removeAll: function(modelName) {
+    clearList: function(modelName) {
       this.sendAction('unloadAll', modelName);
+      this.set('search', '');
     },
 
     sort: function(param) {
