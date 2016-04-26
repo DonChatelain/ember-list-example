@@ -1,14 +1,19 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  newUser: 'newUser',
+  newItem: 'newItem',
   deleteUser: 'deleteUser',
-  unloadAllUsers: 'unloadAllUsers',
+  unloadAll: 'unloadAll',
   sort: 'sort',
+  generate: 'generate',
+  reloadContent: 'reloadContent',
+  reloadModel: 'reloadModel',
+
+  modelName: 'user',
 
   actions: {
     saveNewItem: function() {
-      this.sendAction('newUser', this);
+      this.sendAction('newItem', this);
       this.set('firstName', '');
       this.set('lastName', '');
     },
@@ -17,12 +22,18 @@ export default Ember.Component.extend({
       this.sendAction('deleteUser', user);
     },
 
-    removeUsers: function() {
-      this.sendAction('unloadAllUsers');
+    removeAll: function(modelName) {
+      this.sendAction('unloadAll', modelName);
+      this.set('list', []);
     },
 
     sort: function(param) {
       this.sendAction('sort', param);
+    },
+
+    generate: function(count) {
+      this.sendAction('generate', count, this.get('modelName'));
+      this.sendAction('reloadModel');
     }
   }
 

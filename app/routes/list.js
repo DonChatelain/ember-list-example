@@ -2,7 +2,7 @@ import Ember from 'ember';
 import faker from 'faker';
 
 export default Ember.Route.extend({
-  model() {
+  init: function() {
     var loop;
     for (loop = 0; loop < 5; loop++) {
       this.store.push({
@@ -17,8 +17,16 @@ export default Ember.Route.extend({
         }]
       });
     }
+  },
 
+  model: function() {
    return this.store.peekAll('user');
   },
+
+  actions: {
+    reloadModel: function(){
+      this.refresh();
+    }
+  }
 
 });
