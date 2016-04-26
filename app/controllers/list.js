@@ -4,10 +4,17 @@ export default Ember.Controller.extend({
   sortAscending: true,
   sortedModel: Ember.computed.sort('model', 'sortProperty'),
   sortProperty: ['firstName:asc'],
+  search: '',
+  queryParams: ['search'],
 
   userController: Ember.inject.controller('user'),
 
   actions: {
+    setSearch: function(search) {
+      console.log('listController', search);
+      this.set('search', search);
+    },
+
     reloadModel: function() {
       this.set('model', this.store.peekAll('user'));
     },

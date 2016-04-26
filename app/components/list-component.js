@@ -8,8 +8,13 @@ export default Ember.Component.extend({
   generate: 'generate',
   reloadContent: 'reloadContent',
   reloadModel: 'reloadModel',
+  setSearch: 'setSearch',
 
   modelName: 'user',
+
+  searchResult: function() {
+    this.sendAction('setSearch', this.get('search'));
+  }.observes('search'),
 
   actions: {
     saveNewItem: function() {

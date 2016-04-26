@@ -7,6 +7,8 @@
   <li><a {{action 'removeAll' modelName}}>Remove</a></li>
 </ul>
 
+<p>Filter: {{input value=search placeholder='Search'}}</p>
+
 <p>Generate</p>
 <ul>
   <li><a {{action 'generate' 5}}>5 Items</a></li>
@@ -21,6 +23,6 @@
 
 <div>
   {{#each list as |item| }}
-    <p>{{item.firstName}} {{item.lastName}} <a {{action 'removeUser' item}}>Remove</a></p>
+    <p>{{item.fullName}} <a {{action 'removeUser' item}}>Remove</a></p>
   {{/each}}
 </div>
