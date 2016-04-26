@@ -1,6 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  sortAscending: true,
+  sortedModel: Ember.computed.sort('model', 'sortProperty'),
+  sortProperty: ['firstName:asc'],
+
   userController: Ember.inject.controller('user'),
 
   actions: {
@@ -16,7 +20,7 @@ export default Ember.Controller.extend({
     },
 
     deleteUser: function(user) {
-      this.store.peekRecord('user', user.get('id')).unloadRecord();
+      user.unloadRecord();
     },
 
     newItem: function(component) {
@@ -29,13 +33,7 @@ export default Ember.Controller.extend({
     },
 
     sort: function(param) {
-      var sortedList = this.get('model').sortBy('firstName');
-
-      if (param === 'desc') {
-        sortedList = sortedList.reverse();
-      }
-
-      this.set('model', sortedList.toArray());
+      this.set('sortProperty', [param]);
     }
   }
 });
