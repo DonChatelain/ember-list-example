@@ -10,6 +10,8 @@
       <ul class='list-unstyled'>
         <li><a {{action 'sort' 'firstName:asc'}} class='btn btn-default'> Alphabetically ASC</a></li>
         <li><a {{action 'sort' 'firstName:desc'}} class='btn btn-default margin-top-xs'> Alphabetically DESC</a></li>
+        <li><a {{action 'sort' 'age:asc'}} class='btn btn-default margin-top-xs'> Young -> Old</a></li>
+        <li><a {{action 'sort' 'age:desc'}} class='btn btn-default margin-top-xs'> Old -> Young</a></li>
       </ul>
     </div>
 
@@ -34,10 +36,17 @@
         {{input value=lastName placeholder='Last Name'}}
         <button {{action 'saveNewItem'}} class='btn btn-success'>Save</button></p>
       <table class='table table-striped table-bordered'>
+        <thead>
+          <th>Name:</th>
+          <th>Age:</th>
+          <th>Delete:</th>
+        </thead>
         <tbody>
           {{#each list as |item| }}
             <tr>
-              <td>{{item.fullName}} <a {{action 'removeUser' item}} class='btn btn-danger btn-xs pull-right'><strong>X</strong></a></td>
+              <td>{{item.fullName}}</td>
+              <td>{{item.age}}</td>
+              <td><a {{action 'removeUser' item}} class='btn btn-danger btn-xs pull-right'><strong>X</strong></a></td>
             </tr>
           {{/each}}
         </tbody>
