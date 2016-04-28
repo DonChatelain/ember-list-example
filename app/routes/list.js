@@ -27,6 +27,10 @@ export default Ember.Route.extend( {
   actions: {
     reloadModel: function(){
       this.refresh();
+    },
+
+    transitionTo: function(route) {
+      this.transitionTo(route);
     }
   }
 

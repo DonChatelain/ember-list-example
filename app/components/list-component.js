@@ -9,6 +9,7 @@ export default Ember.Component.extend({
   reloadContent: 'reloadContent',
   reloadModel: 'reloadModel',
   setSearch: 'setSearch',
+  transitionTo: 'transitionTo',
 
   showProfile: false,
   // classNameBindings: 'showProfile',
@@ -17,11 +18,8 @@ export default Ember.Component.extend({
     this.sendAction('setSearch', this.get('search'));
   }.observes('search'),
 
-  actions: {
-    showProfile: function(child) {
-      child.toggleProperty('showProfile')
-    },
 
+  actions: {
     saveNewItem: function() {
       this.sendAction('newItem', this);
       this.set('firstName', '');
@@ -35,6 +33,7 @@ export default Ember.Component.extend({
     clearList: function(modelName) {
       this.sendAction('unloadAll', modelName);
       this.set('search', '');
+      this.sendAction('transitionTo', 'list');
     },
 
     sort: function(param) {
