@@ -1,5 +1,5 @@
 {{#if isShown}}
-  <div class="bg-success padding-sm">
+  <div class="padding-sm">
     <p {{action 'toggleNav'}}>
       <img src='/arrow-alt-left.png'
            height='30'
@@ -8,16 +8,16 @@
     <div class='text-center'>
       <div class="row">
         <div class="col-md-12">
-          <p><strong>Filter:</strong> {{input value=search placeholder='Search'}}</p>
+          <p><strong>Find:</strong> {{input value=search placeholder='Search'}}</p>
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-12">
-          <p><strong>SORT:</strong></p>
+          <p><strong>Sort:</strong></p>
           <ul class='list-unstyled'>
-            <li><a {{action 'sort' 'firstName:asc'}} class='btn btn-default'> Alphabetically ASC</a>
-                <a {{action 'sort' 'firstName:desc'}} class='btn btn-default'> Alphabetically DESC</a></li>
+            <li><a {{action 'sort' 'firstName:asc'}} class='btn btn-default'> A - Z</a>
+                <a {{action 'sort' 'firstName:desc'}} class='btn btn-default'> Z - A</a></li>
             <li><a {{action 'sort' 'age:asc'}} class='btn btn-default margin-top-xs'> Young -> Old</a>
                 <a {{action 'sort' 'age:desc'}} class='btn btn-default margin-top-xs'> Old -> Young</a></li>
           </ul>
@@ -26,19 +26,14 @@
 
       <div class="row">
         <div class="col-md-12">
-          <p><strong>Generate:</strong></p>
-          <!-- <ul class='list-unstyled'>
-            <li><a {{action 'generate' 5}} class='btn btn-default' >5 Items</a></li>
-            <li><a {{action 'generate' 10}} class='btn btn-default margin-top-xs' >10 Items</a></li>
-            <li><a {{action 'generate' 50}} class='btn btn-default margin-top-xs' >50 Items</a></li>
-          </ul> -->
-          <a {{action 'generate' 5}} class='btn btn-default' >5 Items</a>
-          <a {{action 'generate' 10}} class='btn btn-default' >10 Items</a>
-          <a {{action 'generate' 50}} class='btn btn-default' >50 Items</a>
+          <p><strong>Generate Friends:</strong></p>
+          <a {{action 'generate' 5}} class='btn btn-default padding-left-md padding-right-md' >5</a>
+          <a {{action 'generate' 10}} class='btn btn-default padding-left-md padding-right-md' >10</a>
+          <a {{action 'generate' 50}} class='btn btn-default padding-left-md padding-right-md' >50</a>
         </div>
       </div>
       <div class="row margin-top-md">
-        <a {{action 'clearList' modelName}} class='btn btn-danger margin-bottom-xs'>Clear List</a>
+        <a {{action 'clearList' modelName}} class='btn btn-danger margin-bottom-xs'>Unfriend All</a>
       </div>
     </div>
   </div>
