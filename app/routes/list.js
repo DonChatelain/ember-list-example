@@ -3,21 +3,7 @@ import faker from 'faker';
 
 export default Ember.Route.extend( {
   init: function() {
-    var loop;
-    for (loop = 0; loop < 5; loop++) {
-      this.store.push({
-        data: [{
-          id: loop + 1,
-          type: 'user',
-          attributes: {
-            firstName: faker.name.firstName(),
-            lastName: faker.name.lastName(),
-            age: faker.random.number(50)
-          },
-          relationships: {}
-        }]
-      });
-    }
+    this.store.createRecord('user');
   },
 
   model: function(params) {
