@@ -14,8 +14,9 @@ export default Ember.Route.extend( {
   },
 
   setupController: function(controller, model) {
-    console.log('controller', controller);
-    console.log('model', model);
     model.set('showProfile', true);
+
+    //Needed in order to pass model to template.
+    this._super(controller, model);
   }
 });
