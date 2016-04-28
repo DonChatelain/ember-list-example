@@ -51,11 +51,12 @@
               <td>{{item.fullName}}</td>
               <td>{{item.age}}</td>
               <td>
+                <!-- <a {{action 'showProfile' item}} class='btn btn-success'>Profile</a> -->
                 {{link-to 'Profile' 'list.item' item class='btn btn-success'}}
               </td>
               <td><a {{action 'removeUser' item}} class='btn btn-danger btn-xs pull-center'><strong>X</strong></a></td>
             </tr>
-            {{#if showProfile}}
+            {{#if item.showProfile}}
               <tr>
                 <td colspan='4'>
                   {{yield}}

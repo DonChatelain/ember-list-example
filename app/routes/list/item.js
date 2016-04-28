@@ -8,4 +8,10 @@ export default Ember.Route.extend( {
       this.transitionTo('list');
     }
   },
+
+  setupController: function(controller, model) {
+    console.log('controller', controller);
+    console.log('model', model);
+    model.set('showProfile', true);
+  }
 });

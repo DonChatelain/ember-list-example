@@ -10,6 +10,7 @@ export default Ember.Component.extend({
   reloadModel: 'reloadModel',
   setSearch: 'setSearch',
 
+  showProfile: false,
   // classNameBindings: 'showProfile',
 
   searchResult: function() {
