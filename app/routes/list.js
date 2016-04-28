@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import faker from 'faker';
 
 export default Ember.Route.extend( {
   init: function() {
