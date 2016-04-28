@@ -5,7 +5,7 @@ export default Ember.Controller.extend({
   sortedModel: Ember.computed.sort('model', 'sortProperty'),
   sortProperty: ['firstName:asc'],
   search: '',
-  queryParams: ['search'],
+  queryParams: ['search', 'sortProperty'],
   navExpanded: false,
 
   userController: Ember.inject.controller('user'),

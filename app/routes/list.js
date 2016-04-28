@@ -21,6 +21,9 @@ export default Ember.Route.extend( {
   queryParams: {
     search: {
       refreshModel: true
+    },
+    sort: {
+      refreshModel: false
     }
   },
 
