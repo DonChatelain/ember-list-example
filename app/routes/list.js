@@ -2,11 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Route.extend( {
   init: function() {
-    this.store.createRecord('user');
+    this.store.createRecord('user', { id: Math.floor((Math.random() * 1000000) + 1) });
   },
 
   model: function(params) {
-    console.log('PARAMS!!!', params);
     var users = this.store.peekAll('user');
 
     if (params.search.length > 1) {

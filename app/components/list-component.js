@@ -10,11 +10,17 @@ export default Ember.Component.extend({
   reloadModel: 'reloadModel',
   setSearch: 'setSearch',
 
+  // classNameBindings: 'showProfile',
+
   searchResult: function() {
     this.sendAction('setSearch', this.get('search'));
   }.observes('search'),
 
   actions: {
+    showProfile: function(child) {
+      child.toggleProperty('showProfile')
+    },
+
     saveNewItem: function() {
       this.sendAction('newItem', this);
       this.set('firstName', '');
