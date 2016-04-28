@@ -6,6 +6,7 @@ export default Ember.Controller.extend({
   sortProperty: ['firstName:asc'],
   search: '',
   queryParams: ['search'],
+  navExpanded: false,
 
   userController: Ember.inject.controller('user'),
 
@@ -41,6 +42,12 @@ export default Ember.Controller.extend({
 
     sort: function(param) {
       this.set('sortProperty', [param]);
+    },
+
+    toggleNav: function() {
+      this.toggleProperty('navExpanded');
     }
+
+
   }
 });

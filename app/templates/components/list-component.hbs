@@ -1,11 +1,8 @@
 <div class="row">
-  <div class="col-md-6">
     <p>
-      <a {{action 'clearList' modelName}} class='btn btn-danger pull-right'>Clear List</a>
-      <h2>{{title}}</h2>
     </p>
 
-    <div class="col-md-4">
+    <!-- <div class="col-md-4">
       <p><strong>SORT:</strong></p>
       <ul class='list-unstyled'>
         <li><a {{action 'sort' 'firstName:asc'}} class='btn btn-default'> Alphabetically ASC</a></li>
@@ -26,12 +23,9 @@
         <li><a {{action 'generate' 10}} class='btn btn-default margin-top-xs' >10 Items</a></li>
         <li><a {{action 'generate' 50}} class='btn btn-default margin-top-xs' >50 Items</a></li>
       </ul>
-    </div>
+    </div> -->
 
-  </div>
-
-
-    <div class='col-md-6'>
+    <div class='col-md-12'>
       {{#if false}}
         <p><strong>Custom Item:</strong> {{input value=firstName placeholder='First Name'}}
           {{input value=lastName placeholder='Last Name'}}
