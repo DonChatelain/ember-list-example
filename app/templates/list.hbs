@@ -1,1 +1,9 @@
-{{list-component list=sortedModel modelName='user' title='List of Users' }}
+<div class="row">
+  <div class="{{if navExpanded 'col-md-3' 'col-md-1'}}">
+    {{nav-bar modelName='user' isShown=navExpanded}}
+  </div>
+
+  <div class="{{if navExpanded 'col-md-9' 'col-md-11'}}">
+    {{list-component list=sortedModel modelName='user'}}
+  </div>
+</div>
