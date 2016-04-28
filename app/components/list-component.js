@@ -8,7 +8,6 @@ export default Ember.Component.extend({
   generate: 'generate',
   reloadContent: 'reloadContent',
   reloadModel: 'reloadModel',
-  
 
   actions: {
     saveNewItem: function() {

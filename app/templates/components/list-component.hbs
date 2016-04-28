@@ -19,7 +19,7 @@
               <td>{{item.age}}</td>
               <td class='text-center'>
                 {{link-to 'Profile' 'list.item' item class='btn btn-success'}}
-                <a {{action 'removeUser' item}} class='btn btn-danger margin-left-sm'><strong>Unfriend</strong></a>
+                {{button-param text='Unfriend' classNames='btn-danger' action='removeUser' param=item}}
               </td>
             </tr>
             {{#if item.showProfile}}
