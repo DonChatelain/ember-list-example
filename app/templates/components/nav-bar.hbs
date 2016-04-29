@@ -27,9 +27,9 @@
       <div class="row">
         <div class="col-md-12">
           <p><strong>Generate Friends:</strong></p>
-          <a {{action 'generate' 5}} class='btn btn-default padding-left-md padding-right-md' >5</a>
-          <a {{action 'generate' 10}} class='btn btn-default padding-left-md padding-right-md' >10</a>
-          <a {{action 'generate' 50}} class='btn btn-default padding-left-md padding-right-md' >50</a>
+          {{button-param text='5' action='generate' param=5 classNames='btn-default padding-left-xs padding-right-xs'}}
+          {{button-param text='10' action='generate' param=10 classNames='btn-default padding-left-xs padding-right-xs'}}
+          {{button-param text='25' action='generate' param=25 classNames='btn-default padding-left-xs padding-right-xs'}}
         </div>
       </div>
       <div class="row margin-top-md">
