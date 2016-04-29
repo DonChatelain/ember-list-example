@@ -7,7 +7,29 @@
       {{/if}}
 
       {{#if list}}
-        <table class='table table-striped table-bordered'>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+              {{#each list as |item|}}
+                <div class="col-md-4">
+                  {{#link-to 'list.item' item}}
+                    <div class="padding-sm border--radius border--all margin-bottom-sm">
+                        <img src={{item.avatar}} alt={{item.fullName}} class="full-width profile--image" />
+                      <p class="margin-top-xxs margin-bottom-0">Name: {{item.fullName}}</p>
+                      <p>Age: {{item.age}}</p>
+                    </div>
+                  {{/link-to}}
+                </div>
+
+                {{#liquid-if item.showProfile}}
+                  {{outlet}}
+                {{/liquid-if}}
+              {{/each}}
+            </div>
+          </div>
+        </div>
+
+        {{!-- <table class='table table-striped table-bordered'>
           <thead>
             <th>Name:</th>
             <th>Age:</th>
@@ -23,16 +45,16 @@
                     {{button-param text='Unfriend' classNames='btn-danger' action='removeUser' param=item}}
                   </td>
                 </tr>
-                {{#if item.showProfile}}
+                {{#liquid-if item.showProfile}}
                   <tr>
                     <td colspan='4'>
                       {{outlet}}
                     </td>
                   </tr>
-                {{/if}}
+                {{/liquid-if}}
               {{/each}}
           </tbody>
-        </table>
+        </table> --}}
       {{else}}
         <div class="text-center">
           <img src="/wolf_pack.gif" alt="No friends" />
