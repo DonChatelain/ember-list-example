@@ -13,21 +13,26 @@
               {{#each list as |item|}}
                 <div class="col-md-4">
                   {{#link-to 'list.item' item}}
-                    <div class="padding-sm border--radius border--all margin-bottom-sm">
-                        <img src={{item.avatar}} alt={{item.fullName}} class="full-width profile--image" />
+                    <div class="padding-sm border--radius border--all margin-bottom-sm" >
+                      <img src={{item.avatar}} alt={{item.fullName}} class="full-width profile--image" />
                       <p class="margin-top-xxs margin-bottom-0">Name: {{item.fullName}}</p>
                       <p>Age: {{item.age}}</p>
                     </div>
                   {{/link-to}}
                 </div>
-
-                {{#liquid-if item.showProfile}}
-                  {{outlet}}
-                {{/liquid-if}}
               {{/each}}
             </div>
           </div>
         </div>
+        <div class="background--grey">{{outlet "inline"}}</div>
+
+        {{!-- {{#unless sidebar}}
+          <div class="row">
+            <div class="col-md-12">
+              {{outlet}}
+            </div>
+          </div>
+        {{/unless}} --}}
 
         {{!-- <table class='table table-striped table-bordered'>
           <thead>

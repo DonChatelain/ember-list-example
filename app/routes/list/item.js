@@ -1,6 +1,22 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend( {
+
+  renderTemplate(controller) {
+    this._super(...arguments);
+    var outlet;
+    if (controller.get("sidenavActive")) {
+      outlet = "sidenav";
+    } else {
+      outlet = "inline";
+    }
+
+    this.render("list/item", {
+        into: "list",
+        outlet: outlet
+    });
+  },
+
   resetController: function () {
     this.currentModel.set('showProfile', false);
   },

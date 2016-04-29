@@ -7,6 +7,7 @@ export default Ember.Controller.extend({
   search: '',
   queryParams: ['search', 'sortProperty'],
   navExpanded: false,
+  sidebar: true,
 
   userController: Ember.inject.controller('user'),
 
@@ -47,7 +48,5 @@ export default Ember.Controller.extend({
     toggleNav: function() {
       this.toggleProperty('navExpanded');
     }
-
-
   }
 });

@@ -8,6 +8,7 @@ export default Ember.Component.extend({
   generate: 'generate',
   reloadContent: 'reloadContent',
   reloadModel: 'reloadModel',
+  openOutlet: 'openOutlet',
 
   actions: {
     saveNewItem: function() {
@@ -19,6 +20,10 @@ export default Ember.Component.extend({
     removeUser: function(user) {
       this.sendAction('deleteUser', user);
     },
+
+    openOutlet: function(outletName, model) {
+      this.sendAction('openOutlet', outletName, model);
+    }
   }
 
 });
