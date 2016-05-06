@@ -8,6 +8,15 @@ export default function() {
     };
   });
 
+  this.get('/users/:id', function(db, request) {
+    let id = request.params.id;
+    return {
+      data: {
+        type: 'users', id: id, attributes: db.users.find(id)
+      }
+    };
+  });
+
   // These comments are here to help you get started. Feel free to delete them.
 
   /*
