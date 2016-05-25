@@ -6,16 +6,19 @@ export default Ember.Route.extend( {
   // },
 
   model: function(params) {
-    var users = this.store.findAll('user');
+    var modelPromise = this.store.findAll('user').then(function(users) {
+      if (params.search.length > 1) {
+        var searchTerm = params.search;
+        users = users.filter(function(user) {
+          return user.get('firstName').indexOf(searchTerm) !== -1 ||
+                 user.get('lastName').indexOf(searchTerm) !== -1;
+        });
+      }
 
-    if (params.search.length > 1) {
-      var searchTerm = params.search;
-      users = users.filter(function(user) {
-        return user.get('firstName').indexOf(searchTerm) !== -1 ||
-               user.get('lastName').indexOf(searchTerm) !== -1;
-      });
-    }
-    return users;
+      return users;
+    });
+
+    return modelPromise;
   },
 
   queryParams: {
