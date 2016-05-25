@@ -6,7 +6,11 @@ export default Ember.Route.extend( {
   },
 
   model: function(params) {
-    return this.store.findRecord('user', params.id);
+    if ( this.store.hasRecordForId('user', params.id) ) {
+      return this.store.peekRecord('user', params.id);
+    } else {
+      this.transitionTo('list');
+    }
   },
 
   setupController: function(controller, model) {
