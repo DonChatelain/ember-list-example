@@ -1,4 +1,4 @@
-import Mirage, {faker} from 'ember-cli-mirage';
+import {faker} from 'ember-cli-mirage';
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
