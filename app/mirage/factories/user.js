@@ -13,7 +13,7 @@ export default Mirage.Factory.extend({
   'street-address1'() { return faker.address.streetAddress(); },
   'city'() { return faker.address.streetAddress(); },
   'state'() {   return faker.address.state(); },
-  'zipcode'() { return faker.address.zipCode(); },
+  'zip-code'() { return faker.address.zipCode(); },
   'color'() {  return faker.commerce.color(); },
   'company-name'() { return faker.company.companyName(); },
   'catch-phrase'() {  return faker.hacker.phrase(); },
