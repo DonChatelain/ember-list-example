@@ -1,20 +1,26 @@
-{{link-to 'Close' 'list' class='pull-right btn btn-primary btn-sm'}}
-
-{{#if isEditing}}
-  {{link-to 'Cancel' 'list.item' model class='btn btn-danger btn-sm pull-right'}}
-{{else}}
-  {{link-to 'Edit' 'list.item.edit' model class='pull-right btn btn-default btn-sm'}}
-{{/if}}
-
 <div class="row">
-  <div class="col-md-3 col-md-offset-1">
-    {{user-avatar model=model}}
-  </div>
-  <div class="col-md-6 margin-xs">
-    {{#if isEditing}}
-      {{user-form model=model}}
-    {{else}}
-      {{item-details model=model title='Profile'}}
-    {{/if}}
+  <div class="col-md-11 col-md-offset-1 margin-xs">
+    <div class="row">
+      <div class="col-md-2 col-md-offset-1">
+        {{user-avatar model=model}}
+      </div>
+
+      <div class="col-md-7">
+        {{#if isEditing}}
+          {{user-form model=model}}
+        {{else}}
+          {{item-details model=model title='Profile'}}
+        {{/if}}
+      </div>
+
+      <div class="col-md-2">
+        {{link-to 'Close' 'list' class='pull-right btn btn-primary btn-sm'}}
+        {{#if isEditing}}
+          {{link-to 'Cancel' 'list.item' model class='btn btn-danger btn-sm pull-right'}}
+        {{else}}
+          {{link-to 'Edit' 'list.item.edit' model class='pull-right btn btn-default btn-sm'}}
+        {{/if}}
+      </div>
+    </div>
   </div>
 </div>
