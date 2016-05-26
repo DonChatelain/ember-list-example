@@ -7,6 +7,7 @@
       {{/if}}
 
       {{#if list}}
+        {{outlet}}
         <table class='table table-striped table-bordered'>
           <thead>
             <th>Name:</th>
@@ -23,13 +24,6 @@
                     {{button-param text='Unfriend' classNames='btn-danger' action='removeUser' param=item}}
                   </td>
                 </tr>
-                {{#if item.showProfile}}
-                  <tr>
-                    <td colspan='4'>
-                      {{outlet}}
-                    </td>
-                  </tr>
-                {{/if}}
               {{/each}}
           </tbody>
         </table>
