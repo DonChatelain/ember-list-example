@@ -1,4 +1,4 @@
-{{#if isShown}}
+{{#liquid-if isShown class="crossfade-transition"}}
   <div class="padding-sm">
     <p {{action 'toggleNav'}}>
       <img src='/arrow-alt-left.png'
@@ -45,4 +45,4 @@
          width='50'
          {{action 'toggleNav'}} />
   </div>
-{{/if}}
+{{/liquid-if}}

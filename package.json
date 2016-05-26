@@ -34,6 +34,7 @@
     "ember-cli-mirage": "0.1.13",
     "ember-cli-qunit": "^1.4.0",
     "ember-cli-release": "0.2.8",
+    "ember-cli-sass": "5.3.1",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-uglify": "^1.2.0",
     "ember-data": "^2.5.0",
@@ -42,6 +43,10 @@
     "ember-faker": "1.1.0",
     "ember-load-initializers": "^0.5.1",
     "ember-resolver": "^2.0.3",
+    "liquid-fire": "0.23.0",
     "loader.js": "^4.0.1"
+  },
+  "dependencies": {
+    "ember-cli-sass": "^5.3.1"
   }
 }
