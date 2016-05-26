@@ -12,7 +12,7 @@ export default Ember.Controller.extend({
                 streetAddress1: faker.address.streetAddress(),
                 city: faker.address.streetAddress(),
                 state:  faker.address.state(),
-                zipcode: faker.address.zipCode(),
+                zipCode: faker.address.zipCode(),
                 color:  faker.commerce.color(),
                 companyName: faker.company.companyName(),
                 catchPhrase:  faker.hacker.phrase(),
