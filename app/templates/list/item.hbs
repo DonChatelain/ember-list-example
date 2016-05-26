@@ -1,7 +1,12 @@
 {{link-to 'Close' 'list' class='pull-right btn btn-primary btn-sm'}}
 <btn class='btn btn-default btn-sm pull-right' {{action 'isEditing' model}}>Edit</btn>
-{{#if model.isEditing}}
-  EDITING!!!!!
-{{else}}
-  {{item-details model=model title='Profile'}}
-{{/if}}
+<div class="row">
+  <div class="col-md-3 col-md-offset-1">
+    {{user-avatar model=model}}
+  </div>
+  {{#if model.isEditing}}
+    EDITING!!!!!
+  {{else}}
+    {{item-details model=model title='Profile'}}
+  {{/if}}
+</div>
