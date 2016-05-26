@@ -1,0 +1,9 @@
+<ul class='list-unstyled'>
+  <li><strong>Street Address:</strong> {{input model.streetAddress1 value=model.streetAddress1}}</li>
+  <li><strong>City:</strong> {{input model.city value=model.city}}</li>
+  <li><strong>State:</strong> {{input model.state value=model.state}}</li>
+  <li><strong>Zip:</strong> {{input model.zipCode value=model.zipCode}}</li>
+  <li><strong>Favorite Color:</strong> {{input model.color value=model.color}}</li>
+  <li><strong>Known for saying:</strong> {{input model.catchPhrase value=model.catchPhrase}}</li>
+</ul>
+<button {{action 'saveUser' model}} class='btn btn-success'>Save</button>
