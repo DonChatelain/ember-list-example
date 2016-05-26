@@ -1,2 +1,7 @@
 {{link-to 'Close' 'list' class='pull-right btn btn-primary btn-sm'}}
-{{item-details model=model title='Profile'}}
+<btn class='btn btn-default btn-sm pull-right' {{action 'isEditing' model}}>Edit</btn>
+{{#if model.isEditing}}
+  EDITING!!!!!
+{{else}}
+  {{item-details model=model title='Profile'}}
+{{/if}}
