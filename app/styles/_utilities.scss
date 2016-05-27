@@ -133,6 +133,22 @@ b {
   text-align: justify
 }
 
+.vertical-align--top {
+  vertical-align: top;
+}
+
+.vertical-align--bottom {
+  vertical-align: bottom;
+}
+
+.vertical-align--webkit-middle {
+  vertical-align: -webkit-baseline-middle;
+}
+
+.vertical-align--text-top {
+  vertical-align: text-top;
+}
+
 // Borders
 
 .border--all {
@@ -149,6 +165,9 @@ b {
 }
 .border--left {
   border-left: 1px solid #ccc;
+}
+.border--none {
+  border:none;
 }
 
 // Spacing Utilities
