@@ -41,6 +41,7 @@ export default Ember.Controller.extend({
     },
 
     sort: function(param) {
+      console.log('sort from list');
       this.set('sortProperty', [param]);
     },
 

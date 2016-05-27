@@ -1,12 +1,58 @@
 // ==========
+// Variables
+// ==========
+$orange: #FFB03B;
+$green: #468966;
+$red: #B64926;
+$black: #333;
+
+// ==========
 // Typography
 // ==========
+
 $font-nunito: 'Nunito', sans-serif;
+
+a {
+  color: $green;
+  @include transition(color, 0.2s, linear);
+  &:hover, &:focus {
+    text-decoration: none;
+    color: darken($green, 20%);
+  }
+}
+
+.color-green {
+  color: $green;
+}
+
+.color-orange {
+  color: $orange;
+}
 
 * {
   font-family: $font-nunito;
 }
 
+// ==========
+// Backgrounds
+// ==========
+
+.background--gray {
+  background-color: #ddd;
+}
+
+// ==========
+// Buttons
+// ==========
+.btn-green {
+  @include transition(background, 0.1s, linear);
+  background: $green;
+  color: #FFF;
+  &:hover {
+    background: $black;
+    color: #FFF;
+  }
+}
 // ==========
 // Page Styles
 // ==========
@@ -25,16 +71,14 @@ $font-nunito: 'Nunito', sans-serif;
 }
 
 .invisible-select {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  height: 100%;
-  min-width: 100%;
-  line-height: 100%;
+  color: $black;
   cursor: pointer;
-  opacity: 0;
-  filter: alpha(opacity=0);
+  background: none;
+  border: none;
+  outline: 0;
   -webkit-appearance: none;
+}
+
+.short-input {
+  max-width: 50px;
 }

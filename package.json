@@ -43,6 +43,7 @@
     "ember-faker": "1.1.0",
     "ember-load-initializers": "^0.5.1",
     "ember-resolver": "^2.0.3",
+    "emberx-select": "2.1.2",
     "liquid-fire": "0.23.0",
     "loader.js": "^4.0.1"
   },
